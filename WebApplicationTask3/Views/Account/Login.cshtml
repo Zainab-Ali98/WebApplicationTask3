@@ -1,0 +1,36 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+
+<form method="post" asp-action="Login">
+
+    <table class="table table-bordered">
+
+
+        <tr>
+            <td> <label asp-for="Email"></label></td>
+            <td> <input asp-for="Email" class="form-control" /></td>
+
+        </tr>
+
+        <tr>
+            <td> <label asp-for="Password"></label></td>
+            <td> <input asp-for="Password" class="form-control" /></td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </td>
+
+
+
+        </tr>
+
+    </table>
+</form>
