@@ -31,6 +31,7 @@ namespace WebApplicationTask3.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Login");
             }
+            ViewBag.Roles = new SelectList(_context.Roles, "Id", "RoleName");
             return View(user);
         }
 
@@ -42,7 +43,7 @@ namespace WebApplicationTask3.Controllers
 
         [HttpPost]
         public IActionResult Login(string Email, int Password)
-        {
+         {
             var user = _context.Users.Where(x => x.Email == Email && x.Password == Password);
             if(user.Any())
             {
